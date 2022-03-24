@@ -16,7 +16,7 @@ print(' ')
 host = "http://127.0.0.1:9898"
 # 目标检测就把ocr改成det,其他相同
 # 方式一
-file = open(r'test.jpg', 'rb').read()
+file = open(r'img/test.jpg', 'rb').read()
 # file = open(r'test_calc.png', 'rb').read()
 
 
@@ -68,8 +68,8 @@ api_url = f"{host}/slide/match/b64/json"
 resp = requests.post(api_url, data=base64.b64encode(jsonstr.encode()).decode())
 print(f"{api_url=}, {resp.text=}")
 
-target_file = open(r'compare_target.jpg', 'rb').read()
-bg_file = open(r'compare_bg.jpg', 'rb').read()
+target_file = open(r'img/compare_target.jpg', 'rb').read()
+bg_file = open(r'img/compare_bg.jpg', 'rb').read()
 
 api_url = f"{host}/slide/compare/file"
 resp = requests.post(api_url, files={'target_img': target_file, 'bg_img': bg_file})
