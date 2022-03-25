@@ -46,8 +46,8 @@ print(f"{api_url=}, {resp.text=}")
 
 # 滑块识别
 
-target_file = open(r'match_target.png', 'rb').read()
-bg_file = open(r'match_bg.png', 'rb').read()
+target_file = open(r'img/match_target.png', 'rb').read()
+bg_file = open(r'img/match_bg.png', 'rb').read()
 
 api_url = f"{host}/slide/match/file"
 resp = requests.post(api_url, files={'target_img': target_file, 'bg_img': bg_file})
